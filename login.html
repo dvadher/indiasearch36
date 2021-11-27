@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>India Search - Home</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <meta http-equiv="x-ua-compatible" content="IE=10">    
+         <!-- font family -->   
+         <link rel="stylesheet" href="css/font/fontawesome/styles.min.css"> 
+         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+         <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+         <!-- font family -->  
+      <link rel="stylesheet" href="css/custom.css">
+      <link rel="stylesheet" href="css/login.css">
+      <!-- page animation section css start -->
+      <link rel="stylesheet" href="css/animation.css">
+      <link rel='stylesheet' href='css/aos.css'>
+      <!-- page animation section css end -->
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>   
+   </head>
+   <body id="body" class="home_full_bg">     
+      <div class="main_page position-relative login-module" id="dashboard-page">
+      
+         <!-- main content -->
+         <div class="container go-register">
+            <div class="navbar-brand login">
+               <a href="index.html" class="d-inline-block">
+                  <img src="images/india-dearch.png" class="custom-logo logo-active" alt="logo">
+                  <img src="images/india-dearch-footer.png" class="custom-logo logo-white" alt="logo">
+               </a>
+            </div>
+            <a href="index.html" class="d-inline-block back-btn">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i> back to home
+            </a>
+            <!-- Login Form Starts -->
+            <div class="form__container form__container-login">
+               
+                <form action="" class="form">
+                    <h3 class="form__heading"> Sign In</h3>
+                    <p class="form__text">or use your account</p>
+                    <input type="email" placeholder="email" class="form__field">
+                    <input type="password" placeholder="password" class="form__field">
+                    <p class="form__text">Forgot your password?</p>
+                    <button type="submit" class="btn btn--main">Sign In</button>
+                </form>
+            </div>
+            <!-- Login Form Ends -->
+            <!-- Register Form Starts -->
+            <div class="form__container form__container-register">
+                <form action="" class="form">
+                    <h3 class="form__heading"> Create Account</h3>                   
+                    <p class="form__text">or use your email for registeration</p>
+                    <input type="text" placeholder="name" class="form__field">
+                    <input type="email" placeholder="email" class="form__field">
+                    <input type="password" placeholder="password" class="form__field">
+                    <button type="submit" class="btn btn--main">Sign Up</button>
+                </form>
+            </div>
+            <!-- Register Form Ends -->
+            <!-- Overlay container Starts -->
+            <div class="overlay-container">
+                <!-- Right Overlay Starts -->
+                <div class="overlay overlay--right">
+                    <h3 class="overlay__heading">Hello Friend</h3>
+                    <p class="overlay__desc text-white">Enter your personal details and start journey with us</p>
+                    <button type="button" id="go-register" class="btn btn--main-outline">Sign Up</button>
+                </div>
+                <!-- Right Overlay Ends -->
+                <!-- Left Overlay Starts -->
+                <div class="overlay overlay--left">
+                    <h3 class="overlay__heading">Welcome Back!</h3>
+                    <p class="overlay__desc text-white">Keep connected with us please login with your personal info</p> 
+                    <button type="button" id="go-login" class="btn btn--main-outline">Sign In</button>
+                </div>
+                <!-- Left Overlay Ends -->
+            </div>
+            <!-- Overlay Container Ends -->
+        </div>
+      </div>        
+      <!-- footer section -->
+      <script src='js/cursor.js'></script>
+      <script type="text/javascript" src="js/custom.js"></script>
+      <!-- page animation section js start -->
+      <script type="text/javascript" src="js/animation.js"></script>
+      <script>
+         (function (document) {
+    // Cache DOM
+    const $goLogin = document.querySelector('#go-login'),
+        $goRegister = document.querySelector('#go-register'),
+        $container = document.querySelector('.container'),
+        $overlayContainer = document.querySelector('.overlay-container');
+
+    _toggleForm = () => {
+        if ($container.classList.contains('go-register')) {
+            $container.classList.remove('go-register')
+            $container.classList.add('go-login')
+            $overlayContainer.classList.add('animateWidth')
+            $overlayContainer.addEventListener('webkitTransitionEnd', () => $overlayContainer.classList.remove('animateWidth'))
+        } else {
+            $container.classList.remove('go-login')
+            $container.classList.add('go-register')
+            $overlayContainer.classList.add('animateWidth')
+            $overlayContainer.addEventListener('webkitTransitionEnd', () => $overlayContainer.classList.remove('animateWidth'))
+        }
+    }
+
+
+    $goLogin.addEventListener('click', _toggleForm);
+    $goRegister.addEventListener('click', _toggleForm);
+})(document);
+      </script>
+      <!-- page animation section js end -->     
+   </body>
+</html>
