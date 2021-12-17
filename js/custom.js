@@ -7,7 +7,7 @@ $(document).ready(function () {
         $(".main_page").css('min-height', min_height + 'px');
     });
 
-    
+       
     $(window).scroll(function(){
         var navHeight = $('#custom-header').height();
         var sticky = $('#custom-header');
